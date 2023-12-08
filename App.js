@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
 
 export default function App() {
   return (
@@ -20,10 +21,20 @@ export default function App() {
               <Text style = {styles.Text_usuario}>Usuário</Text>
             </View>
             <View style={styles.container_senha}>
-              <Text>Usuário</Text>
+              <Text style={styles.Text_Senha}>Senha</Text>
             </View>
           </View>
+          <View>
+             <TouchableOpacity style={styles.Botao_Entrar}>
+                <Text style={styles.Texto_Botao_Entrar}>Entrar</Text>
+             </TouchableOpacity>
+          </View>
             <StatusBar style="auto" />
+        </View>
+        <View style={styles.container_criar_conta}>
+          <TouchableOpacity>
+            <Text>Criar Conta</Text>
+          </TouchableOpacity>
         </View>
       <View style={styles.container_barra_rodape}>
       </View>
@@ -35,7 +46,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container_barra_topo: {
     width: 500,
-    height: 80,
+    height: 50,
     backgroundColor: '#1F1F1F',
   },
   container_login: {
@@ -43,15 +54,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingTop: 50,
-    paddingBottom: 50
+    paddingBottom: 20,
   },
   container_imagem:{
-    marginBottom: 120
+    
   },
   logo: {
     borderRadius : 500,
-    height: 200,
-    width: 200,
+    height: 220,
+    width: 220,
   },
   container_usuario: {
     marginTop: 50,
@@ -63,7 +74,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20
   },
   container_usuario_senha:{
-    paddingTop: 70 
+  heigth: 700
   },
   container_senha:{
     marginTop : 50,
@@ -77,11 +88,32 @@ const styles = StyleSheet.create({
   Text_usuario: {
     opacity : 0.7
   },
+  Text_Senha:{
+    opacity : 0.7
+  },
+  Botao_Entrar:{
+    marginTop: 50,
+    backgroundColor: '#1F1F1F',
+    borderRadius: 15,
+    height: 56,
+    width: 221,
+    alignItems: 'center',
+    paddingVertical : 18
+  },
+  Texto_Botao_Entrar:{
+    color: '#FFFFFF' 
+  },
+  container_criar_conta:{
+    alignItems: 'center',
+    height: 20
+  },
   container_barra_rodape:{
     justifyContent: 'space-around',
-    height: 150,
+    height: 100,
     backgroundColor: '#1F1F1F',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: 80,
+    borderRadius: 25 
   }
 
 });
